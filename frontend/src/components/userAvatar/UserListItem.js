@@ -2,8 +2,8 @@ import { Avatar } from "@chakra-ui/avatar";
 import { Box, Text } from "@chakra-ui/layout";
 import { ChatState } from "../../Context/ChatProvider";
 
-const UserListItem = ({ handleFunction }) => {
-  const { user } = ChatState();
+const UserListItem = ({person, handleFunction }) => {
+  const { user : loggedUser } = ChatState();
 
   return (
     <Box
@@ -27,14 +27,14 @@ const UserListItem = ({ handleFunction }) => {
         mr={2}
         size="sm"
         cursor="pointer"
-        name={user.name}
-        src={user.pic}
+        name={person.name}
+        src={person.pic}
       />
       <Box>
-        <Text>{user.name}</Text>
+        <Text>{person.name}</Text>
         <Text fontSize="xs">
           <b>UserName : </b>
-          {user.email}
+          {person.email}
         </Text>
       </Box>
     </Box>
